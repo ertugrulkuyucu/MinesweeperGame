@@ -67,19 +67,19 @@ public class MayinTarlasi {
 
 	}
 
-	// 'run' metodunda seçilen lokasyonun kontrolü yapilir, eger
+	// 'run' metodunda seÃ§ilen lokasyonun kontrolÃ¼ yapilir, eger
 	// cevresinde mayin varsa ipucu yazdirilir. clue = ipucu.
 	public void checkMine(int row, int col) {
 
 		int clue = 0;
 
-		if (col + 1 != colNumber && map[row][col + 1] == -1) // sað
+		if (col + 1 != colNumber && map[row][col + 1] == -1) // right
 			clue += 1;
-		if (col != 0 && map[row][col - 1] == -1) // sol
+		if (col != 0 && map[row][col - 1] == -1) // left
 			clue += 1;
-		if (row + 1 != rowNumber && map[row + 1][col] == -1) // aþaðý
+		if (row + 1 != rowNumber && map[row + 1][col] == -1) // down
 			clue += 1;
-		if (row != 0 && map[row - 1][col] == -1) // yukarý
+		if (row != 0 && map[row - 1][col] == -1) // up
 			clue += 1;
 		if (clue == 0)
 			clue = -2;
@@ -88,12 +88,12 @@ public class MayinTarlasi {
 
 	}
 
-	// sürekli oyuncuya son durum yazdirilir.
+	// sÃ¼rekli oyuncuya son durum yazdirilir.
 	public void print(int[][] arr) {
 		for (int i = 0; i < arr.length; i++) {
 			for (int j = 0; j < arr[0].length; j++) {
-				// alttaki if yazdirilan boardu düzgün hale getirmek için.
-				// tek, çift karakter farki.
+				// alttaki if yazdirilan boardu dÃ¼zgÃ¼n hale getirmek iÃ§in.
+				// tek, Ã§ift karakter farki.
 				if (arr[i][j] != -1 && arr[i][j] != -2)
 					System.out.print(" ");
 				System.out.print(arr[i][j] + " ");
@@ -103,9 +103,9 @@ public class MayinTarlasi {
 		}
 	}
 
-	// aktif degildir. oyun bitigini kontrol etmektedir. þu anda iki defa ayni sayi
-	// tuslandiginda count artiyor ve oyun kazandi görünüyor. bu methodda bunun
-	// önüne gecilebilir. fakat çok fazla for kullanildi.
+	// aktif degildir. oyun bitigini kontrol etmektedir. su anda iki defa ayni sayi
+	// tuslandiginda count artiyor ve oyun kazandi gÃ¶rÃ¼nÃ¼yor. bu methodda bunun
+	// Ã¶nÃ¼ne gecilebilir. fakat Ã§ok fazla for kullanildi.
 	public boolean endGame(int[][] arr) {
 
 		int zeroCount = 0;
