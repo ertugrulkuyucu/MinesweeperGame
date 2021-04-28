@@ -1,1 +1,3 @@
 # MinesweeperGame
+
+Mayın tarlası.
